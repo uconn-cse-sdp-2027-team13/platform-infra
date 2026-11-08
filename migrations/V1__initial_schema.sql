@@ -9,6 +9,7 @@ CREATE TABLE job (
     created_at DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3), -- insertions into table must be in UTC
     started_at DATETIME(3),
     finished_at DATETIME(3),
+    updated_at DATETIME(3),
     last_error TEXT
 );
 
