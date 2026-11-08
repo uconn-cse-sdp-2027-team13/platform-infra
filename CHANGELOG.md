@@ -10,3 +10,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Add a local development stack for MySQL 8, Redis 7 with AOF persistence, and RustFS, including sample environment settings and startup and teardown scripts.
+- Created a MySQL database schema ([#3](https://github.com/uconn-cse-sdp-2027-team13/platform-infra/issues/3)).
