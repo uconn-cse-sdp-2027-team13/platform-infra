@@ -2,6 +2,7 @@ services:
   mysql:
     image: mysql:8.0
     restart: unless-stopped
+    command: ["mysqld", "--default-time-zone=+00:00"]
     environment:
       MYSQL_DATABASE: ${MYSQL_DATABASE:-app}
       MYSQL_USER: ${MYSQL_USER:-app}
@@ -11,6 +12,7 @@ services:
       - "3306:3306"
     volumes:
       - mysql_data:/var/lib/mysql
+      - ../migrations:/docker-entrypoint-initdb.d:ro
     healthcheck:
       test: ["CMD-SHELL", "mysqladmin ping --host=127.0.0.1 --user=root --password=$$MYSQL_ROOT_PASSWORD --silent"]
       interval: 5s
